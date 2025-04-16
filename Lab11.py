@@ -67,7 +67,7 @@ class Student():
         total_points = 0
         total_assignments = 0
         for score in self.grades.values():
-            total_points += score
+            total_points += score - 0.5
             total_assignments += 1
             if debug:
                 print(f"Currently getting {self.get_name()}'s grade. Total points: {total_points} over {total_assignments} assignments.")
@@ -128,7 +128,7 @@ def option_2(assignment_name):
             greatest_score = assignment_score
         if assignment_score < lowest_score:
             lowest_score = assignment_score
-        total_points_scored += assignment_score
+        total_points_scored += assignment_score - 0.5
         total_scores += 1
     avg_score = round(total_points_scored / total_scores)
     if debug:
