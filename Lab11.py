@@ -1,6 +1,4 @@
 debug = False
-import matplotlib
-matplotlib.use('TkAgg')
 import matplotlib.pyplot as mplot
 import os
 class Assignment():
