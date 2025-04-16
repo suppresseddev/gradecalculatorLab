@@ -105,9 +105,7 @@ def parse_submissions():
             selected_student.submit_assignment(assignment_id, points_earned)
             if debug:
                 print(f"New submission added! Student Id: {student_id}, Assignment Id: {assignment_id}, Points Earned: {points_earned}")
-parse_students()
-parse_assignments()
-parse_submissions()
+
 #Now we should have all of the backbone to design the menu.
 def option_1(student_name):
     if Student.get_student_by_name(student_name) == -1:
@@ -146,24 +144,32 @@ def option_3(assignment_name):
     assignment_scores = assignment_obj.get_normalized_student_scores()
     mplot.hist(assignment_scores, bins = [0, 25, 50, 75, 100], label = f"{assignment_name} Score Distribution")
     mplot.show()
-if debug:
-    option_1("Michael Potter")
-    option_2("Quiz 1")
-    option_3("Quiz 1")
-while True:
-    print("""1. Student grade
-2. Assignment statistics
-3. Assignment graph
-""")
-    user_input = input("Enter your selection: ")
-    if user_input == "0":
-        exit()
-    if user_input == "1":
-        selected_student = input("What is the student's name: ")
-        option_1(selected_student)
-    if user_input == "2":
-        selected_assignment = input("What is the assignment name: ")
-        option_2(selected_assignment)
-    if user_input == "3":
-        selected_assignment = input("What is the assignment name: ")
-        option_3(selected_assignment)
+
+def main():
+    parse_students()
+    parse_assignments()
+    parse_submissions()
+    if debug:
+        option_1("Michael Potter")
+        option_2("Quiz 1")
+        option_3("Quiz 1")
+    while True:
+        print("""1. Student grade
+    2. Assignment statistics
+    3. Assignment graph
+    """)
+        user_input = input("Enter your selection: ")
+        if user_input == "0":
+            exit()
+        if user_input == "1":
+            selected_student = input("What is the student's name: ")
+            option_1(selected_student)
+        if user_input == "2":
+            selected_assignment = input("What is the assignment name: ")
+            option_2(selected_assignment)
+        if user_input == "3":
+            selected_assignment = input("What is the assignment name: ")
+            option_3(selected_assignment)
+if __name__ == "__main__":
+    #I hate you all for having us do this in PYTHON.
+    main()
