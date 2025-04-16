@@ -67,7 +67,7 @@ class Student():
         total_points = 0
         total_assignments = 0
         for score in self.grades.values():
-            total_points += score - 0.5
+            total_points += score
             total_assignments += 1
             if debug:
                 print(f"Currently getting {self.get_name()}'s grade. Total points: {total_points} over {total_assignments} assignments.")
