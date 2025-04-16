@@ -153,23 +153,22 @@ def main():
         option_1("Michael Potter")
         option_2("Quiz 1")
         option_3("Quiz 1")
-    while True:
-        print("""1. Student grade
-    2. Assignment statistics
-    3. Assignment graph
-    """)
-        user_input = input("Enter your selection: ")
-        if user_input == "0":
-            exit()
-        if user_input == "1":
-            selected_student = input("What is the student's name: ")
-            option_1(selected_student)
-        if user_input == "2":
-            selected_assignment = input("What is the assignment name: ")
-            option_2(selected_assignment)
-        if user_input == "3":
-            selected_assignment = input("What is the assignment name: ")
-            option_3(selected_assignment)
+    print("""1. Student grade
+2. Assignment statistics
+3. Assignment graph
+""")
+    user_input = input("Enter your selection: ")
+    if user_input == "0":
+        exit()
+    if user_input == "1":
+        selected_student = input("What is the student's name: ")
+        option_1(selected_student)
+    if user_input == "2":
+        selected_assignment = input("What is the assignment name: ")
+        option_2(selected_assignment)
+    if user_input == "3":
+        selected_assignment = input("What is the assignment name: ")
+        option_3(selected_assignment)
 if __name__ == "__main__":
     #I hate you all for having us do this in PYTHON.
     main()
