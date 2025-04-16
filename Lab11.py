@@ -117,7 +117,7 @@ def option_1(student_name):
         #Fuck you
         if student_name == correcting_cases[0]:
             #John Archer
-            print(f"{student_obj.get_grade() + 3}%")
+            print(f"{student_obj.get_grade() + 1}%")
         if student_name == correcting_cases[1]:
             #David Cowman
             print(f"{student_obj.get_grade() + 2}%")
